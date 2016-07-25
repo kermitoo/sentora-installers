@@ -1024,7 +1024,7 @@ elif [[ "$OS" = "Ubuntu" || "$OS" = "debian" ]]; then
     $PACKAGE_INSTALLER libapache2-mod-php5 php5-common php5-cli php5-mysql php5-gd php5-mcrypt php5-curl php-pear php5-imap php5-xmlrpc php5-xsl php5-intl
     if [ "$VER" = "14.04" ]; then
         php5enmod mcrypt  # missing in the package for Ubuntu 14, is this needed for debian 8 as well?
-    else
+    elif [ "$VER" = "12.04" ]; then
         $PACKAGE_INSTALLER php5-suhosin
     fi
     PHP_INI_PATH="/etc/php5/apache2/php.ini"
